@@ -1,7 +1,6 @@
 const process= require("process");
 const fs = require('node:fs');
 const path = require('path');
-
 const fileToWrite=path.join(__dirname, 'couttext.txt');
 const writeStream = fs.createWriteStream(fileToWrite);
 
@@ -9,7 +8,6 @@ function bye()
 {
     console.log("Goodbye, user");
     process.exit();
-    writeStream.end;
 }
 
 process.stdout.write("Hello, user\n");

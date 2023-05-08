@@ -22,7 +22,7 @@ const writeStream = fs.createWriteStream(newFilePath);
                 const newpath = path.join(mypath,data.name);
                 //console.log(newpath);
                 const origin = fs.createReadStream(newpath, {flags: 'r'});
-                origin.on("data", data=> writeStream.write(data)    );
+                origin.on("data", data=> writeStream.write(data+"\n")    );
               
             }
         }

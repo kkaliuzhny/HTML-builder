@@ -15,19 +15,12 @@ const writeStream = fs.createWriteStream(helperPath);
 (async function foo()
 {
      let data = await fp.readFile(myPath, 'utf8' );
-    
-
-  
     const initials = await fp.readdir(htmlDirectory, {withFileTypes:true});
     let count =1;
- 
-    
     for (const  initial of initials)
     {   
        
         const newPathToHtml=path.join(htmlDirectory,initial.name);
-        
-        
         fs.readFile(newPathToHtml, "utf8", 
         function(error,context){
         data  = data.replace(`{{${initial.name.split('.')[0]}}}`, context) ;
@@ -64,7 +57,7 @@ const mypath = path.join(__dirname,"styles");
                 const newpath = path.join(mypath,data.name);
                 
                 const origin = fs.createReadStream(newpath, {flags: 'r'});
-                origin.on("data", data=> writeStyleStream.write(data)    );
+                origin.on("data", data=> writeStyleStream.write(data+"\n")    );
               
             }
         }
