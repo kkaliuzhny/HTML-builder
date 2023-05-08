@@ -6,7 +6,7 @@ const helper = path.join(__dirname,"project-dist");
 const newFilePath=path.join(helper,"bundle.css");
 
 const writeStream = fs.createWriteStream(newFilePath);
-let matrixStyles=[];
+
 
 
 
@@ -29,9 +29,4 @@ let matrixStyles=[];
     
     }
     
-  
-    
-
-
-
 })()
